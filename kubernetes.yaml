@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ldomadm2
+  labels:
+    app: ldomadm2
+spec:
+  selector:
+    matchLabels:
+      app: ldomadm2
+  template:
+    metadata:
+      labels:
+        app: ldomadm2
+    spec:
+      containers:
+        - name: ldomadm2
+          image: idiotoflinux/ldomadm2-image:latest
+          ports:
+            - containerPort: 5000
